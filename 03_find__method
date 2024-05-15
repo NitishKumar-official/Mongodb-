@@ -1,0 +1,55 @@
+
+
+//jab hme kisi condition ke according data khojna ho tb
+
+db.student.find({city:"patna"})
+
+
+
+
+{
+  _id: ObjectId('6643a9ad1c0ccca1d6476bc3'),
+  name: 'SRIS',
+  marks: 64,
+  city: 'patna'
+}
+{
+    _id: ObjectId('6643a9ad1c0ccca1d6476bc4'),
+    name: 'ash',
+    marks: 56,
+    city: 'patna'
+  }
+
+
+
+
+  //jab kisi condition me bahuut sara data aaye aur usme se ek ko print krna ho
+
+db.student.findOne({city:"patna"})
+
+
+
+
+
+{
+    _id: ObjectId('6643a9ad1c0ccca1d6476bc3'),
+    name: 'SRIS',
+    marks: 64,
+    city: 'patna'
+}
+
+
+
+// jab ek se jyda condition ke according data find krna ho
+
+db.student.findOne({city:"patna",marks:64})
+
+
+
+
+{
+    _id: ObjectId('6643a9ad1c0ccca1d6476bc3'),
+    name: 'SRIS',
+    marks: 64,
+    city: 'patna'
+}

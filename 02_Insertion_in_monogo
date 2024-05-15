@@ -1,0 +1,81 @@
+
+
+1.  db.collection.insertOne()                //Inserts a single document into a collection.
+
+2.  db.collection.insertMany()               //Inserts multiple documents into a collection.
+
+
+
+//insertion of data
+
+db.student.insertOne({name:"rana",age:21,marks:88}) 
+
+//it indicate that data are inserted and mongo generate a object code 
+ which is treated as primary as in sql
+
+{
+  acknowledged: true,
+  insertedId: ObjectId('6643a5701c0ccca1d6476bc1')
+}
+
+
+
+db.student.find()                    //jab hme inserted data dekhna ho to
+
+{
+  _id: ObjectId('6643a5701c0ccca1d6476bc1'),
+  name: 'rana',
+  age: 21,
+  marks: 88
+}
+
+Notes:- mongo me hme koi limitation nhi hota hai column ka isme hm jo mn chahe
+        add kr sakte hain, jaise sql me hme fix rahta tha age city hai to city inter
+        sabke liye krna hoga
+
+
+db.student.insertOne({name:"Nitu",age:20,city:"jamalpur",marks:88,salary:202222})
+
+{
+  acknowledged: true,
+  insertedId: ObjectId('6643a6261c0ccca1d6476bc2')
+}
+
+{
+  _id: ObjectId('6643a6261c0ccca1d6476bc2'),
+  name: 'Nitu',
+  age: 20,
+  city: 'jamalpur',
+  marks: 88,
+  salary: 202222
+}
+
+
+
+//METHOD 2
+
+2. db.collection.insertMany() 
+
+db.student.insertMany([{name:"SRIS",marks:64,city:"bhagalpur"},{name:"ash",marks:56, city:"patna"}])
+{
+  acknowledged: true,
+  insertedIds: {
+    '0': ObjectId('6643a9ad1c0ccca1d6476bc3'),
+    '1': ObjectId('6643a9ad1c0ccca1d6476bc4')
+  }
+}
+
+db.student.find()
+
+{
+  _id: ObjectId('6643a9ad1c0ccca1d6476bc3'),
+  name: 'SRIS',
+  marks: 64,
+  city: 'bhagalpur'
+}
+{
+  _id: ObjectId('6643a9ad1c0ccca1d6476bc4'),
+  name: 'ash',
+  marks: 56,
+  city: 'patna'
+}

@@ -1,0 +1,40 @@
+
+
+=>  Update Methods
+MongoDB provides the following methods for updating documents in a collection:
+
+db.collection.updateOne()
+//Updates at most a single document that match a specified filter even though multiple documents may match the specified filter.
+
+db.student.updateOne({name:"Nitu"},{$set:{marks:99}})
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+
+db.collection.updateMany()
+//Update all documents that match a specified filter.
+
+db.student.updateMany({city:"patna"},{$set:{city:"patna anishabad"}})
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 2,
+  modifiedCount: 2,
+  upsertedCount: 0
+}
+
+db.collection.replaceOne()
+//Replaces at most a single document that match a specified filter even though multiple documents may match the specified filter.
+
+db.student.replaceOne({name:"ash"},{name:"ashwin",marks:94,state:"patna"})
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}

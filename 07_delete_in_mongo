@@ -1,0 +1,23 @@
+
+
+db.student.deleteOne({state:"patna"})    //jab databse me se kisi ek key ko dlt krna ho
+{
+  acknowledged: true,
+  deletedCount: 1
+}
+
+db.student.deleteMany({marks:{$lt:75}})  //jab bahuut sara dlt krna ho tab
+{
+    acknowledged: true,
+    deletedCount: 1
+}
+
+
+db.student.deleteMany({})                 //jab pura database khali krna ho
+{
+    acknowledged: true,
+    deletedCount: 3
+}
+
+db.dropDatabase()                        //jab databse hi dlt krna ho
+{ ok: 1, dropped: 'college' }

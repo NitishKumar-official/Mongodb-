@@ -1,0 +1,9 @@
+
+
+1.
+
+show dbs                        // it is used to check how much database is exist
+
+2.
+
+use college                    //use is used to select database in all . college is name of database

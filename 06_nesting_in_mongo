@@ -1,0 +1,31 @@
+
+
+
+//way of nesting
+
+db.student.insertOne({name:"farah",performance:{marks:88,grade : "A"}}) 
+{
+  acknowledged: true,
+  insertedId: ObjectId('6644b9c9e6730fd3064a6d9c')
+}
+
+{
+    _id: ObjectId('6644b9c9e6730fd3064a6d9c'),
+    name: 'farah',
+    performance: {
+      marks: 88,
+      grade: 'A'
+    }
+  }
+
+
+db.student.find({"performance.marks":88})     //nested key ka access
+{
+    _id: ObjectId('6644b9c9e6730fd3064a6d9c'),
+    name: 'farah',
+    performance: {
+      marks: 88,
+      grade: 'A'
+    }
+}
+
